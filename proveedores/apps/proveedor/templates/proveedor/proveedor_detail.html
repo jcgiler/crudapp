@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>{{ proveedor.nombre }}</h2>
+<p>Razon Social: <i>{{ proveedor.razon_social }}</i></p>
+<p>Identificacion: <i>{{ proveedor.identificacion }}</i></p>
+<p>Cedula: <i>{{ proveedor.cedula }}</i></p>
+<p>Genero: <i>{{ proveedor.genero }}</i></p>
+<p>Correo: <i>{{ proveedor.correo }}</i></p>
+<p>Telefono: <i>{{ proveedor.telefono }}</i></p>
+<p>
+    <a class="btn btn-primary" href="{% url "proveedores:list" %}">Regresar</a>
+</p>
+{% endblock contenido %}
