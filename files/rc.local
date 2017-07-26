@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# sudo systemctl start rc-local.service
+
+/usr/local/bin/uwsgi --emperor /etc/uwsgi/vassals/ &
