@@ -17,16 +17,19 @@ from django.views.generic.edit import (
 
 from .models import Proveedor
 
-
 class ProveedorList(ListView):
-    model = Proveedor
+    queryset = Proveedor.objects.filter(archivado=False).order_by('-pk')
+    context_object_name = 'proveedores'
 
+class ProveedorArchiveList(ListView):
+    queryset = Proveedor.objects.filter(archivado=True).order_by('-pk')
+    context_object_name = 'proveedores'
 
 class ProveedorDetail(DetailView):
     model = Proveedor
 
 FIELDS = ['nombre','razon_social','identificacion',
-				'cedula', 'genero', 'correo', 'telefono']
+		  'cedula','genero','correo','telefono','archivado']
 
 class ProveedorCreation(CreateView):
     model = Proveedor

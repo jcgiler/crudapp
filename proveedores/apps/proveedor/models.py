@@ -25,6 +25,7 @@ class Proveedor(models.Model):
     genero = models.CharField('Genero', max_length=1, choices=GENERO)
     correo = models.EmailField('Correo', max_length=254)
     telefono = models.CharField('Telefono', max_length=10)
+    archivado = models.BooleanField('Archivado?', default=False)
 
     class Meta:
         verbose_name = 'Proveedor'
