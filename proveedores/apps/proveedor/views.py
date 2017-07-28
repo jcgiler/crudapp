@@ -18,18 +18,22 @@ from django.views.generic.edit import (
 from .models import Proveedor
 
 class ProveedorList(ListView):
-    queryset = Proveedor.objects.filter(archivado=False).order_by('-pk')
+
     context_object_name = 'proveedores'
 
-class ProveedorArchiveList(ListView):
-    queryset = Proveedor.objects.filter(archivado=True).order_by('-pk')
-    context_object_name = 'proveedores'
+    def get(self, request, *args, **kwargs):
+        A = False if not self.request.GET.get('q') else True
+        self.queryset = Proveedor.objects.filter(archivado=A).order_by('-pk')
+        return super(ProveedorList, self).get(request, *args, **kwargs)
+
 
 class ProveedorDetail(DetailView):
     model = Proveedor
 
+
 FIELDS = ['nombre','razon_social','identificacion',
 		  'cedula','genero','correo','telefono','archivado']
+
 
 class ProveedorCreation(CreateView):
     model = Proveedor
@@ -41,7 +45,10 @@ class ProveedorUpdate(UpdateView):
     success_url = reverse_lazy('proveedores:list')
     fields = FIELDS
 
-class ProveedorDelete(DeleteView):
-    model = Proveedor
-    template_name = 'proveedor/proveedor_confirm_delete.html'
-    success_url = reverse_lazy('proveedores:list')
+def ProveedorDelete(request):
+    
+    template = 'proveedor/proveedor_list.html'
+    cid = request.GET['q']
+    Proveedor.objects.get(pk=cid).delete()
+
+    return render(request, template, {})

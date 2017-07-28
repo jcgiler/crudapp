@@ -20,14 +20,14 @@ SET search_path = public, pg_catalog;
 -- Data for Name: proveedor_proveedor; Type: TABLE DATA; Schema: public; Owner: jcgiler
 --
 
-COPY proveedor_proveedor (id, nombre, razon_social, identificacion, cedula, genero, correo, telefono) FROM stdin;
-1	Carlos Ortega Barzola	Muebleria Palito	2	009999111009991	M	carlos.ortega@mueblesa.com.ec	0987234526
-7	Juan Carlos Perez	DISTSUM	1	009999111009992	M	carlos.ortega@mueblesa.com.ec	0987103629
-8	Carlos Ortega Barzola	Muebleria Palito	1	0923791341	M	lrivadeneira@indualsa.com.ec	0987103629
-9	Orlando Macias Peso	TAXMARE	2	009999111009934	M	taxmare21@hotmail.com	0987103634
-10	Carlos Ortega Barzola	Industrias Altimar	1	009999111009991	M	lrivadeneira@indualsa.com.ec	0987103629
-11	Luis Rivadeneira Quispe	Industrias Altimar	1	009999111009991	F	carlos.ortega@mueblesa.com.ec	0987103629
-3	Maritza Lopez Galpe	INDUCORP S.A.	2	009999111009993	F	mlopez@inducorp.com.ec	0987102345
+COPY proveedor_proveedor (id, nombre, razon_social, identificacion, cedula, genero, correo, telefono, archivado) FROM stdin;
+1	Carlos Ortega Barzola	Muebleria Palito	2	009999111009991	M	carlos.ortega@mueblesa.com.ec	0987234526	f
+7	Juan Carlos Perez	DISTSUM	1	009999111009992	M	carlos.ortega@mueblesa.com.ec	0987103629	f
+8	Carlos Ortega Barzola	Muebleria Palito	1	0923791341	M	lrivadeneira@indualsa.com.ec	0987103629	f
+9	Orlando Macias Peso	TAXMARE	2	009999111009934	M	taxmare21@hotmail.com	0987103634	f
+10	Carlos Ortega Barzola	Industrias Altimar	1	009999111009991	M	lrivadeneira@indualsa.com.ec	0987103629	f
+11	Luis Rivadeneira Quispe	Industrias Altimar	1	009999111009991	F	carlos.ortega@mueblesa.com.ec	0987103629	f
+3	Maritza Lopez Galpe	INDUCORP S.A.	2	009999111009993	F	mlopez@inducorp.com.ec	0987102345	f
 \.
 
 
